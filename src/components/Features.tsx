@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mic, GitBranch, Share2, Shield } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
@@ -11,6 +12,8 @@ const features = [
       "whisper.cppを活用した高精度な音声認識。会議中の発言をリアルタイムでテキスト化。",
     color: "bg-blue-50",
     iconColor: "text-blue-500",
+    image: "/images/03_structure_map_init.png",
+    imageAlt: "リアルタイム文字起こし画面",
   },
   {
     icon: GitBranch,
@@ -19,6 +22,8 @@ const features = [
       "LLMが発言をリアルタイムに分析し、論点・合意事項・TODOを自動で分類・構造化。",
     color: "bg-indigo-50",
     iconColor: "text-indigo-500",
+    image: "/images/08_comparison_table.png",
+    imageAlt: "比較表の自動生成画面",
   },
   {
     icon: Share2,
@@ -27,6 +32,8 @@ const features = [
       "構造化された論点をマインドマップとしてリアルタイム表示。議論の全体像を一目で把握。",
     color: "bg-purple-50",
     iconColor: "text-purple-500",
+    image: "/images/11_action_items.png",
+    imageAlt: "マインドマップ全体表示画面",
   },
   {
     icon: Shield,
@@ -35,6 +42,8 @@ const features = [
       "whisper.cppによるオンデバイス音声認識。機密性の高い会議でも安心して利用可能。",
     color: "bg-green-50",
     iconColor: "text-green-500",
+    image: null,
+    imageAlt: null,
   },
 ];
 
@@ -63,17 +72,30 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
             >
-              <div
-                className={`w-12 h-12 rounded-xl ${feature.color} flex items-center justify-center mb-5`}
-              >
-                <feature.icon className={feature.iconColor} size={24} />
+              {feature.image && (
+                <div className="border-b border-gray-100">
+                  <Image
+                    src={feature.image}
+                    alt={feature.imageAlt!}
+                    width={960}
+                    height={540}
+                    className="w-full h-auto"
+                  />
+                </div>
+              )}
+              <div className="p-8">
+                <div
+                  className={`w-12 h-12 rounded-xl ${feature.color} flex items-center justify-center mb-5`}
+                >
+                  <feature.icon className={feature.iconColor} size={24} />
+                </div>
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-[#6b7280] leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-[#6b7280] leading-relaxed">
-                {feature.description}
-              </p>
             </motion.div>
           ))}
         </div>

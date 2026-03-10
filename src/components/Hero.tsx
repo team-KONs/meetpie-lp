@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import MindMapDemo from "./MindMapDemo";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -52,8 +52,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
-              <div className="flex items-center gap-2 mb-4">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-100">
                 <div className="w-3 h-3 rounded-full bg-red-400" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
                 <div className="w-3 h-3 rounded-full bg-green-400" />
@@ -61,7 +61,14 @@ export default function Hero() {
                   MeetingFlow — リアルタイム構造化
                 </span>
               </div>
-              <MindMapDemo />
+              <Image
+                src="/images/03_structure_map_init.png"
+                alt="MeetingFlow デモ画面 — リアルタイム文字起こしと論点構造マップ"
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                priority
+              />
             </div>
           </motion.div>
         </div>

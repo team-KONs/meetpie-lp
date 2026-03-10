@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mic, Cpu, Brain, Monitor, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const steps = [
   {
@@ -27,6 +28,30 @@ const steps = [
     label: "可視化",
     tech: "React Flow",
     color: "#10b981",
+  },
+];
+
+const screenshots = [
+  {
+    src: "/images/02_agenda.png",
+    alt: "アジェンダ設定と会議開始",
+    title: "1. アジェンダを設定して会議開始",
+    description:
+      "会議の議題を事前に設定。参加者と論点を明確にした状態で議論をスタート。",
+  },
+  {
+    src: "/images/03_structure_map_init.png",
+    alt: "リアルタイムで論点を構造化",
+    title: "2. リアルタイムで論点を構造化",
+    description:
+      "発言をリアルタイムに文字起こしし、AIが論点・課題・提案を自動分類してマインドマップに展開。",
+  },
+  {
+    src: "/images/15_completed.png",
+    alt: "会議完了と議事録生成",
+    title: "3. 議事録と次のアクションを自動生成",
+    description:
+      "会議終了時に決定事項・アクションアイテム・未解決論点を自動で整理。",
   },
 ];
 
@@ -99,6 +124,42 @@ export default function HowItWorks() {
                 <span className="text-xs text-[#6b7280] block">
                   {step.tech}
                 </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Screenshots */}
+        <div className="mt-20 space-y-16">
+          {screenshots.map((shot, i) => (
+            <motion.div
+              key={shot.src}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className={`flex flex-col ${
+                i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
+              } gap-8 items-center`}
+            >
+              <div className="md:w-3/5">
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={1920}
+                    height={1080}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              <div className="md:w-2/5">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">
+                  {shot.title}
+                </h3>
+                <p className="text-[#6b7280] leading-relaxed">
+                  {shot.description}
+                </p>
               </div>
             </motion.div>
           ))}

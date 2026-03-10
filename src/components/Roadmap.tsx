@@ -55,7 +55,7 @@ export default function Roadmap() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">ロードマップ</h2>
           <p className="text-[#6b7280] text-lg max-w-2xl mx-auto">
-            未踏IT人材発掘・育成事業での開発計画
+            開発計画
           </p>
         </motion.div>
 

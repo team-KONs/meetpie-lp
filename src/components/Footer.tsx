@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-          2026 MeetingFlow — 未踏IT人材発掘・育成事業
+          2026 MeetingFlow
         </div>
       </div>
     </footer>

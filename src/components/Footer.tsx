@@ -1,18 +1,34 @@
 import { Github } from "lucide-react";
+import Link from "next/link";
+
+const pageLinks = [
+  { label: "ホーム", href: "/" },
+  { label: "費用対効果", href: "/roi" },
+  { label: "技術詳細", href: "/technology" },
+];
 
 export default function Footer() {
   return (
     <footer className="py-12 bg-[#111127] text-gray-400">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-md gradient-bg flex items-center justify-center">
               <span className="text-white font-bold text-xs">MF</span>
             </div>
             <span className="font-semibold text-white">MeetingFlow</span>
-          </div>
+          </Link>
 
           <div className="flex items-center gap-6 text-sm">
+            {pageLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
             <a
               href="https://github.com/team-KONs/meetingflow-lp"
               target="_blank"

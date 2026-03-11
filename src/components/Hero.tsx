@@ -2,19 +2,19 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-16 dot-grid">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-5 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="md:col-span-2"
           >
-<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+<h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
               AIが会議を最適化する。
               <br />
               <span className="gradient-text">リアルタイムで</span>
@@ -63,7 +63,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative md:col-span-3"
           >
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-100">
@@ -74,13 +74,13 @@ export default function Hero() {
                   MeetingFlow — リアルタイム構造化
                 </span>
               </div>
-              <Image
-                src="/images/03_structure_map_init.png"
-                alt="MeetingFlow デモ画面 — リアルタイム文字起こしと論点構造マップ"
-                width={1920}
-                height={1080}
+              <video
+                src="/videos/demo_3x.mp4"
+                autoPlay
+                loop
+                playsInline
+                muted
                 className="w-full h-auto"
-                priority
               />
             </div>
           </motion.div>

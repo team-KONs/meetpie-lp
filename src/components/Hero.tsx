@@ -71,7 +71,7 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
                 <div className="w-3 h-3 rounded-full bg-green-400" />
                 <span className="ml-2 text-xs text-gray-400">
-                  MeetingFlow — リアルタイム構造化
+                  MeetPie.AI — リアルタイム構造化
                 </span>
               </div>
               <video

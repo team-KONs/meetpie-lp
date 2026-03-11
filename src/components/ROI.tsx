@@ -200,7 +200,7 @@ export default function ROI() {
             <p className="text-[#6b7280] max-w-2xl mx-auto">
               会議時間全体のうち各問題で失われる割合。
               <span className="font-medium text-blue-600">
-                青色の項目がMeetingFlowで改善可能
+                青色の項目がMeetPie.AIで改善可能
               </span>
               な領域です。
             </p>
@@ -225,7 +225,7 @@ export default function ROI() {
                     <h3 className="font-bold text-[#1a1a2e]">{item.label}</h3>
                     {item.canImprove && (
                       <span className="text-xs font-medium text-white gradient-bg px-2 py-0.5 rounded-full">
-                        MeetingFlowで改善可能
+                        MeetPie.AIで改善可能
                       </span>
                     )}
                   </div>
@@ -284,7 +284,7 @@ export default function ROI() {
             className="mt-8 text-center"
           >
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-medium px-5 py-3 rounded-full">
-              MeetingFlowでアプローチ可能な非効率 ={" "}
+              MeetPie.AIでアプローチ可能な非効率 ={" "}
               <span className="font-bold text-lg">27%</span>
               （アジェンダ空転16% + 議事録不備11%）
             </div>
@@ -332,7 +332,7 @@ export default function ROI() {
             className="max-w-2xl mx-auto bg-[#1a1a2e] rounded-2xl p-8 text-center text-white"
           >
             <div className="text-sm text-gray-400 mb-2">
-              合計経済損失（MeetingFlowがアプローチ可能な範囲）
+              合計経済損失（MeetPie.AIがアプローチ可能な範囲）
             </div>
             <div className="text-5xl sm:text-6xl font-bold mb-2">
               約7.2
@@ -389,7 +389,7 @@ export default function ROI() {
               className="bg-blue-50/50 rounded-2xl p-8 border border-blue-200 shadow-sm text-center"
             >
               <div className="text-sm text-[#6b7280] mb-2">
-                MeetingFlow導入による改善ポテンシャル
+                MeetPie.AI導入による改善ポテンシャル
               </div>
               <div className="text-4xl sm:text-5xl font-bold gradient-text mb-1">
                 約0.9億円

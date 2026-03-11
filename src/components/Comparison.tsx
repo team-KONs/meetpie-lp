@@ -59,7 +59,7 @@ export default function Comparison() {
                   BigTech
                 </th>
                 <th className="text-center p-4 text-sm font-semibold">
-                  <span className="gradient-text font-bold">MeetingFlow</span>
+                  <span className="gradient-text font-bold">MeetPie.AI</span>
                 </th>
               </tr>
             </thead>

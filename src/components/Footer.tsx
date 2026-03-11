@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <a href="#" className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-md gradient-bg flex items-center justify-center">
-              <span className="text-white font-bold text-xs">MF</span>
+              <span className="text-white font-bold text-xs">MP</span>
             </div>
-            <span className="font-semibold text-white">MeetingFlow</span>
+            <span className="font-semibold text-white">MeetPie.AI</span>
           </a>
 
           <div className="flex items-center gap-6 text-sm">
@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-          2026 MeetingFlow
+          2026 MeetPie.AI
         </div>
       </div>
     </footer>

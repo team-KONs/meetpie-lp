@@ -17,20 +17,20 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "MeetingFlow - 会議中に、会議の質を上げる。",
+  title: "MeetPie.AI - 会議中に、会議の質を上げる。",
   description:
     "リアルタイム音声認識と論点構造化で、会議をその場で可視化するOSSツール。whisper.cppによる完全ローカル処理で安全・高速。",
   openGraph: {
-    title: "MeetingFlow - 会議中に、会議の質を上げる。",
+    title: "MeetPie.AI - 会議中に、会議の質を上げる。",
     description:
       "リアルタイム音声認識と論点構造化で、会議をその場で可視化するOSSツール。",
     type: "website",
     locale: "ja_JP",
-    siteName: "MeetingFlow",
+    siteName: "MeetPie.AI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MeetingFlow - 会議中に、会議の質を上げる。",
+    title: "MeetPie.AI - 会議中に、会議の質を上げる。",
     description:
       "リアルタイム音声認識と論点構造化で、会議をその場で可視化するOSSツール。",
   },

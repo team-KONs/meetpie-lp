@@ -17,7 +17,7 @@ export default function CTA() {
             会議の未来を、一緒につくろう。
           </h2>
           <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
-            MeetingFlowはオープンソースプロジェクトです。
+            MeetPie.AIはオープンソースプロジェクトです。
             コントリビューション、フィードバック、スターをお待ちしています。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,28 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { LucideIcon } from "lucide-react";
 import {
   Mic,
   Cpu,
   Brain,
   Monitor,
   ArrowRight,
-  Clock,
-  MessageSquareText,
-  Sparkles,
-  FileCheck,
-  ListTodo,
-  CheckCircle2,
-  Database,
-  Braces,
-  FileJson,
-  Plug,
-  Bot,
-  BarChart3,
 } from "lucide-react";
 import Image from "next/image";
-import type { ReactNode } from "react";
 
 const steps = [
   {
@@ -51,21 +37,7 @@ const steps = [
   },
 ];
 
-type Screenshot = {
-  type: "image";
-  src: string;
-  alt: string;
-  title: string;
-  description: string;
-} | {
-  type: "icons";
-  icons: { icon: LucideIcon; color: string; bg: string }[];
-  bgColor: string;
-  title: string;
-  description: string;
-};
-
-const screenshots: Screenshot[] = [
+const screenshots = [
   {
     type: "image",
     src: "/images/02_agenda.png",
@@ -83,74 +55,23 @@ const screenshots: Screenshot[] = [
       "発言をリアルタイムに文字起こしし、AIが論点・課題・提案を自動分類してマインドマップに展開。",
   },
   {
-    type: "icons",
-    icons: [
-      { icon: Clock, color: "#6366f1", bg: "#e0e7ff" },
-      { icon: MessageSquareText, color: "#818cf8", bg: "#ede9fe" },
-      { icon: Sparkles, color: "#a78bfa", bg: "#f5f3ff" },
-    ],
-    bgColor: "#eef2ff",
-    title: "3. 過去の会議の内容を元にアドバイス",
-    description:
-      "蓄積された過去の会議データをAIが参照し、現在の議論に対して的確なアドバイスを提供。",
-  },
-  {
     type: "image",
     src: "/images/15_completed.png",
-    alt: "議事録と次のアクションを自動生成",
-    title: "4. 議事録と次のアクションを自動生成",
+    alt: "過去会議の参照と議事録の自動生成",
+    title: "3-4. 過去会議を元にアドバイス＆議事録を自動生成",
     description:
-      "会議終了時に決定事項・アクションアイテム・未解決論点を自動で整理。",
+      "蓄積された過去の会議データをAIが参照し、現在の議論に対して的確なアドバイスを提供。会議終了時には決定事項・アクションアイテム・未解決論点を自動で整理し、議事録を生成。",
   },
+
   {
-    type: "icons",
-    icons: [
-      { icon: Database, color: "#3b82f6", bg: "#dbeafe" },
-      { icon: Braces, color: "#2563eb", bg: "#bfdbfe" },
-      { icon: FileJson, color: "#60a5fa", bg: "#dbeafe" },
-    ],
-    bgColor: "#eff6ff",
-    title: "5. 会議データを構造化してLLMフレンドリーに保存",
+    type: "image",
+    src: "/images/cross-meeting-normal.png",
+    alt: "会議データの構造化とMCP対応",
+    title: "5-6. 会議データの蓄積とAIエージェント連携",
     description:
-      "会議の発言・論点・決定事項を構造化データとして保存。LLMが効率的に参照・分析できる形式で蓄積。",
-  },
-  {
-    type: "icons",
-    icons: [
-      { icon: Plug, color: "#059669", bg: "#d1fae5" },
-      { icon: Bot, color: "#047857", bg: "#a7f3d0" },
-      { icon: BarChart3, color: "#10b981", bg: "#d1fae5" },
-    ],
-    bgColor: "#ecfdf5",
-    title: "6. MCP対応によりAI Agentライクなデータ分析が可能に",
-    description:
-      "MCP（Model Context Protocol）に対応し、外部AIエージェントから会議データへのアクセス・分析が可能。",
+      "会議の発言・論点・決定事項を構造化データとして保存し、LLMが効率的に参照・分析できる形式で蓄積。MCP（Model Context Protocol）に対応し、外部AIエージェントから会議データへのアクセス・分析が可能。",
   },
 ];
-
-function IconPanel({ shot }: { shot: Extract<Screenshot, { type: "icons" }> }) {
-  return (
-    <div
-      className="rounded-2xl border border-gray-100 shadow-lg flex items-center justify-center gap-8 sm:gap-12 aspect-video"
-      style={{ backgroundColor: shot.bgColor }}
-    >
-      {shot.icons.map((item, j) => (
-        <motion.div
-          key={j}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: j * 0.15, duration: 0.4 }}
-          className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex items-center justify-center shadow-sm"
-          style={{ backgroundColor: item.bg }}
-        >
-          <item.icon size={40} style={{ color: item.color }} className="sm:hidden" />
-          <item.icon size={52} style={{ color: item.color }} className="hidden sm:block" />
-        </motion.div>
-      ))}
-    </div>
-  );
-}
 
 export default function HowItWorks() {
   return (
@@ -240,19 +161,15 @@ export default function HowItWorks() {
               } gap-8 items-center`}
             >
               <div className="md:w-3/5">
-                {shot.type === "image" ? (
-                  <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <Image
-                      src={shot.src}
-                      alt={shot.alt}
-                      width={1920}
-                      height={1080}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                ) : (
-                  <IconPanel shot={shot} />
-                )}
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={1920}
+                    height={1080}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
               <div className="md:w-2/5">
                 <h3 className="text-xl sm:text-2xl font-bold mb-3">
@@ -266,21 +183,6 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* Architecture note */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-16 bg-gray-50 rounded-2xl p-8 text-center"
-        >
-          <p className="text-sm text-[#6b7280]">
-            <span className="font-semibold text-[#1a1a2e]">
-              プライバシーファースト:
-            </span>{" "}
-            音声認識はwhisper.cppでローカル実行。音声データが外部サーバーに送信されることはありません。
-          </p>
-        </motion.div>
       </div>
     </section>
   );
